@@ -5,15 +5,17 @@ import os
 def getVar(opts):
         if opts[1] == 'on':
                 imagePath = opts[0]
-                saveImagePath = opts[3]
+                saveImagePath = opts[4]
+                caseType = opts[3].decode('gbk')
                 switch = opts[1]
                 type = opts[2]
-                return imagePath, switch, type, saveImagePath
+                return imagePath, switch, type, caseType, saveImagePath
         elif opts[1] == 'off':
                 imagePath = opts[0]
                 switch = opts[1]
                 type = opts[2]
-                return imagePath, switch, type
+                caseType = opts[3].decode('gbk')
+                return imagePath, switch, type, caseType
 
 if __name__ == '__main__':
-    getVar([r'D:\no-down\25.jpg', r'D:\down', 'on', 'off'])
+    a, b, c, d=  getVar([r'D:\no-down\25.jpg', 'off', 'Abbyy', '民事'])
